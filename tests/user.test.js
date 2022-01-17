@@ -6,6 +6,7 @@ const jwt = require("jsonwebtoken");
 
 const userOneId = new mongoose.Types.ObjectId();
 const userOne = {
+  _id: userOneId,
   name: "bike",
   email: "bikerrs@gmail.com",
   password: "comeonboys",
@@ -16,11 +17,11 @@ const userOne = {
   ],
 };
 
-// beforeEach(async () => {
-//   // console.log("beforeEach");
-//   await User.deleteMany();
-//   await new User(userOne).save();
-// });
+beforeEach(async () => {
+  // console.log("beforeEach");
+  await User.deleteMany();
+  await new User(userOne).save();
+});
 
 // afterAll(async () => {
 //   await mongoose.connection.close();
@@ -70,4 +71,16 @@ test("should get profile for user", async () => {
 
 test("Should not get Profile for unauthorized user", async () => {
   await request(app).get("/users/me").send().expect(401);
+});
+
+test("should delete account for user", async () => {
+  await request(app)
+    .delete("/users/me")
+    .set("Authorization", `Bearer ${userOne.tokens[0].token}`)
+    .send()
+    .expect(200);
+});
+
+test("should not delete account for unauthenticate user", async () => {
+  await request(app).delete("/users/me").send().expect(401);
 });
