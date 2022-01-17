@@ -6,8 +6,8 @@ const jwt = require("jsonwebtoken");
 
 const userOneId = new mongoose.Types.ObjectId();
 const userOne = {
-  name: "feal",
-  email: "feal@gmail.com",
+  name: "bike",
+  email: "bikerrs@gmail.com",
   password: "comeonboys",
   tokens: [
     {
@@ -29,16 +29,16 @@ const userOne = {
 //   console.log("afterEach");
 // });
 
-test("should signup a new user", async () => {
-  await request(app)
-    .post("/users")
-    .send({
-      name: "Andrew",
-      email: "pet@gmail.com",
-      password: "indeed01",
-    })
-    .expect(201);
-});
+// test("should signup a new user", async () => {
+//   await request(app)
+//     .post("/users")
+//     .send({
+//       name: "Andrew",
+//       email: "pet@gmail.com",
+//       password: "indeed01",
+//     })
+//     .expect(201);
+// });
 
 test("Should login existing user", async () => {
   await request(app)
@@ -66,4 +66,8 @@ test("should get profile for user", async () => {
     .set("Authorization", `Bearer ${userOne.tokens[0].token}`)
     .send()
     .expect(200);
+});
+
+test("Should not get Profile for unauthorized user", async () => {
+  await request(app).get("/users/me").send().expect(401);
 });
