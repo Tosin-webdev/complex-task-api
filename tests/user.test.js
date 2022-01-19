@@ -26,7 +26,7 @@ test("should signup a new user", async () => {
 
   // Assert that the database was changed correctly
   const user = await User.findById(response.body.user._id);
-  expect(user).not.tobeNull();
+  expect(user).not.toBeNull();
 
   // Assertions about the response
   expect(response.body).toMatchObject({
