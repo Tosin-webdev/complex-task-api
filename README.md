@@ -1,7 +1,7 @@
 # complex task api
 
 
-##### This project contains all various complex apis which you can use for your projects.
+##### This project that contains various apis that can enable a signed in user to create.
 
 
 ```
@@ -27,7 +27,18 @@ DELETE /users/me
 DELETE /users/me/avatar
 ```
 
+#Usage
 
+```
+npm run dev
+# Install dependency
+npm run dev
+yarn install
 
+# Run in development
+npm run dev
+yarn run dev
 
-
+# Run test
+npm run test
+```
