@@ -25,9 +25,6 @@ PATCH /users/me
 DELETE /users/me
 
 DELETE /users/me/avatar
-
-
-
 ```
 
 
