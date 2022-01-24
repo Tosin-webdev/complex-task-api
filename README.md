@@ -1,7 +1,7 @@
 # complex task api
 
 
-##### This project that contains various apis that can enable a signed in user to create.
+##### This project that contains various apis that can enable a signed in user to create, read,  update, and delete tasks.
 
 
 ```
