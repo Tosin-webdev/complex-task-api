@@ -30,7 +30,6 @@ DELETE /users/me/avatar
 #Usage
 
 ```
-npm run dev
 # Install dependency
 npm run dev
 yarn install
