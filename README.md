@@ -42,4 +42,4 @@ yarn run dev
 npm run test
 ```
 
-contribution to this is highly welcomed
+contribution to this project is highly welcomed.
