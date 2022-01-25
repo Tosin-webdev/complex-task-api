@@ -27,7 +27,7 @@ DELETE /users/me
 DELETE /users/me/avatar
 ```
 
-#Usage
+Usage
 
 ```
 # Install dependency
