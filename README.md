@@ -31,7 +31,6 @@ Usage
 
 ```
 # Install dependency
-npm run dev
 yarn install
 
 # Run in development
