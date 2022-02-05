@@ -6,6 +6,7 @@
 
 ```
 # Routes
+
 GET  /users
 
 GET /users/me
