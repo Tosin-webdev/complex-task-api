@@ -20,6 +20,7 @@ router.post("/users", async (req, res) => {
 
 router.post("/users/login", async (req, res) => {
   try {
+   // find user if present in the database
     const user = await User.findByCredentials(
       req.body.email,
       req.body.password
