@@ -64,18 +64,16 @@ router.patch('/users/me', auth, async (req, res) => {
   const allowedUpdates = ['name', 'email', 'password', 'age'];
   const isValidOperation = updates.every((update) => allowedUpdates.includes(update));
 
-    try {
-      updates.forEach((update) => (req.user[update] = req.body[update]));
-      await req.user.save();
-      res.send(req.user);
-    } catch (e) {
-      res.status(400).send(e);
-    }
+  try {
+    updates.forEach((update) => (req.user[update] = req.body[update]));
+    await req.user.save();
+    res.send(req.user);
+  } catch (e) {
+    res.status(400).send(e);
+  }
   if (!isValidOperation) {
     return res.status(400).send({ error: 'Invalid updates!' });
   }
-
-
 });
 
 router.delete('/users/me', auth, async (req, res) => {
