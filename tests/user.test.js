@@ -19,7 +19,7 @@ test("should signup a new user", async () => {
     .post("/users")
     .send({
       name: "david",
-      email: "david@gmail.com",
+      email: "david21@gmail.com",
       password: "generality",
     })
     .expect(201);
@@ -32,7 +32,7 @@ test("should signup a new user", async () => {
   expect(response.body).toMatchObject({
     user: {
       name: "david",
-      email: "david@gmail.com",
+      email: "david21@gmail.com",
     },
     token: user.tokens[0].token,
   });
